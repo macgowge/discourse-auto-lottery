@@ -29,7 +29,8 @@ after_initialize do
   end
 
   # 定时任务：自动开奖
-  require_relative "app/jobs/auto_draw_lottery_job"
+  # require_relative "app/jobs/auto_draw_lottery_job"
+  require_relative "app/jobs/scheduled/auto_draw_lottery_job"
 
   # 注册路由
   Discourse::Application.routes.append do

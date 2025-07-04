@@ -1,0 +1,6 @@
+plugins:
+  auto_lottery_enabled:
+    default: true
+    client: true
+    type: bool
+    description: "是否启用自动抽奖功能"

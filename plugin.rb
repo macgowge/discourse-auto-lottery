@@ -15,7 +15,7 @@ after_initialize do
   require_relative "app/models/auto_lottery_entry"
 
   # 加载控制器
-  require_relative "app/controllers/auto_lottery/admin_controller"
+  require_relative "app/controllers/discourse_auto_lottery/admin_controller"
   require_relative "app/controllers/auto_lottery/entries_controller"
 
   # 加载 BBCode 抽奖解析器

@@ -1,0 +1,29 @@
+zh_CN:
+  auto_lottery:
+    title: 自动抽奖
+    admin_draw_btn: 开奖
+    drawing: 正在开奖...
+    draw_success: 开奖成功
+    draw_failed: 开奖失败
+    confirm_draw: 确定要立即开奖吗？
+  js:
+    lottery:
+      status_limited: "当前参与：%{current} / %{total}，剩余 %{remaining}"
+      status_unlimited: "当前参与人数：%{count}"
+      cost_info: "花费 %{cost} 积分"
+      cost_free: "免费参与"
+      participate_btn: "参与抽奖"
+      participate_with_cost_btn: "参与抽奖（%{cost}积分）"
+      confirm_cost_participation: "参与将花费 %{cost} 积分，确定吗？"
+      joining: "正在参与..."
+      success_message_inline: "参与成功！"
+      success_joined_alert: "您已成功参与抽奖！"
+      max_entries_reached_btn: "已达参与上限"
+      admin_draw_btn: "开奖"
+      draw_completed: "开奖已完成"
+      draw_success: "开奖成功"
+      draw_failed: "开奖失败"
+      csrf_token_error: "验证失败，请刷新页面重试。"
+      network_error_client: "网络错误，请稍后重试。"
+      auto_draw_in: "自动开奖倒计时："
+      auto_draw_time_up: "已开奖"

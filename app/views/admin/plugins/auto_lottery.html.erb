@@ -1,0 +1,82 @@
+<div class="auto-lottery-admin">
+  <h2>抽奖活动列表</h2>
+  <table class="auto-lottery-table">
+    <thead>
+      <tr>
+        <th>标题</th>
+        <th>奖品</th>
+        <th>数量</th>
+        <th>参与人数</th>
+        <th>开奖时间</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lotteries.each do |lottery| %>
+        <tr>
+          <td><%= lottery.title %></td>
+          <td><%= lottery.prize_name %></td>
+          <td><%= lottery.prize_count %></td>
+          <td><%= lottery.total_entries %></td>
+          <td><%= lottery.auto_draw_at.strftime("%Y-%m-%d %H:%M") if lottery.auto_draw_at %></td>
+          <td><%= lottery.status %></td>
+          <td>
+            <% if lottery.status == "active" %>
+              <button class="btn btn-danger" data-lottery-id="<%= lottery.id %>" onclick="autoLotteryDraw(<%= lottery.id %>)">开奖</button>
+            <% else %>
+              已开奖
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script type="text/javascript">
+  function autoLotteryDraw(lotteryId) {
+    if (!confirm("确定要立即开奖吗？")) {
+      return;
+    }
+
+    fetch(`/auto_lottery/admin/draw/${lotteryId}`, {
+      method: 'POST',
+      headers: {
+        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json())
+      .then(data => {
+        alert(data.message || '开奖操作完成');
+        location.reload();
+      }).catch(() => {
+        alert('开奖失败，请稍后重试。');
+      });
+  }
+</script>
+
+<style>
+  .auto-lottery-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .auto-lottery-table th, .auto-lottery-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .auto-lottery-table th {
+    background-color: #f8f9fa;
+  }
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+</style>

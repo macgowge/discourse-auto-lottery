@@ -1,0 +1,36 @@
+.auto-lottery-box {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 6px;
+  background-color: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.auto-lottery-status-display {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.auto-lottery-message-area {
+  margin-top: 10px;
+  min-height: 20px;
+  color: #555;
+}
+
+.admin-draw-btn {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.admin-draw-btn:hover {
+  background-color: #c9302c;
+  border-color: #ac2925;
+}

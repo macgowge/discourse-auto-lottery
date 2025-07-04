@@ -1,0 +1,14 @@
+{{#if model.lottery_data}}
+  <div
+    class="auto-lottery-box"
+    data-lottery-id="{{model.lottery_data.id}}"
+    data-prize-name="{{model.lottery_data.prize_name}}"
+    data-points-cost="{{model.lottery_data.points_cost}}"
+    data-max-entries="{{model.lottery_data.max_entries}}"
+    data-current-entries="{{model.lottery_data.total_entries}}"
+    data-can-draw="{{if model.can_admin_draw "true" "false"}}"
+    data-prize-count="{{model.lottery_data.prize_count}}"
+  >
+    <!-- 前端 JS 会自动渲染内容 -->
+  </div>
+{{/if}}

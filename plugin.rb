@@ -51,3 +51,5 @@ end
 # 注册前端资源
 # register_asset "javascripts/discourse/initializers/auto-lottery.js", :client
 register_asset "stylesheets/admin/auto-lottery.scss"
+
+register_admin_page "auto-lottery", icon: "gift"

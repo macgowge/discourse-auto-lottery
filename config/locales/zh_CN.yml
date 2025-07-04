@@ -1,6 +1,7 @@
 zh_CN:
   auto_lottery:
     title: 自动抽奖
+    description: 管理自动抽奖设置
     admin_draw_btn: 开奖
     drawing: 正在开奖...
     draw_success: 开奖成功

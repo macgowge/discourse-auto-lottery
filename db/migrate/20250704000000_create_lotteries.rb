@@ -7,6 +7,10 @@ class CreateLotteries < ActiveRecord::Migration[6.1]
       t.datetime :auto_draw_at, null: false
       t.integer :creator_id, null: false
       t.string :status, default: "active", null: false
+      t.integer :post_id
+      t.integer :user_id
+      t.datetime :drawn_at
+      t.json :winner_ids, default: []
 
       t.text :winner_usernames, default: "" # 中奖用户名列表，逗号分隔
       t.integer :total_entries, default: 0, null: false

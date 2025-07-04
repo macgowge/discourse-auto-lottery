@@ -11,7 +11,8 @@ enabled_site_setting :auto_lottery_enabled
 
 after_initialize do
   # 加载模型
-  require_relative "app/models/auto_lottery"
+  # require_relative "app/models/auto_lottery"
+  require_relative "app/models/auto_lottery/lottery"
   require_relative "app/models/auto_lottery_entry"
 
   # 加载控制器

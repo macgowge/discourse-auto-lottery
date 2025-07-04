@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AutoLottery < ActiveRecord::Base
+module AutoLottery < ActiveRecord::Base
   self.table_name = "auto_lotteries"
 
   belongs_to :post

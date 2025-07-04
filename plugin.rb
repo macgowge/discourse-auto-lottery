@@ -10,6 +10,9 @@
 enabled_site_setting :auto_lottery_enabled
 
 after_initialize do
+  # 添加一个后台插件页面条目，不需要页面内容
+  add_admin_route 'auto_lottery.title', 'auto-lottery'
+  
   # 加载模型
   # require_relative "app/models/auto_lottery"
   require_relative "app/models/auto_lottery/lottery"
@@ -52,4 +55,3 @@ end
 # register_asset "javascripts/discourse/initializers/auto-lottery.js", :client
 register_asset "stylesheets/admin/auto-lottery.scss"
 
-register_admin_page "auto-lottery", icon: "gift"
